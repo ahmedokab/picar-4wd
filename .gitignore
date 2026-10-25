@@ -26,3 +26,6 @@ dist/
 .DS_Store
 # Model checkpoints (too large for GitHub, share them separately)
 *.pt
+
+
+node_modules/
