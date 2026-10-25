@@ -1,17 +1,39 @@
 <html>
+<head>
+<meta charset="utf-8">
+<style>
+  body    { background: #13294B; color: white; font-family: sans-serif; text-align: center; margin-top: 40px; }
+  h1      { color: #FF5F05; font-weight: normal; }
+  button  { background: #FF5F05; color: white; border: none; border-radius: 6px;
+            width: 110px; padding: 10px; margin: 4px; font-size: 16px; cursor: pointer; }
+  button:active { background: #C94A00; }
+  .hint   { color: #9BA6B8; font-size: 14px; }
+  #stats  { display: inline-block; text-align: left; line-height: 1.8; }
+</style>
+</head>
 
 <script src="index.js"></script>
 
 <body>
-<h1>My First Website</h1>
-<p>Hello IoT!</p>
+<h1>PiCar Remote</h1>
+<p id="status" class="hint">Connecting...</p>
 
-My name is: <input id="myName" type="text" placeholder="name"/>
-<button class="btn btn-success" onclick="greeting()">Sumbit</button>
+<button onclick="send('forward')">↑ Forward</button>
 <br>
-<span id="greet"> </span>
+<button onclick="send('left')">← Left</button>
+<button onclick="send('stop')">Stop</button>
+<button onclick="send('right')">→ Right</button>
 <br>
-<span id="greet_from_server"> </span>
+<button onclick="send('backward')">↓ Backward</button>
+<p class="hint">Or use the arrow keys (space = stop).</p>
+
+<div id="stats">
+Temperature: <span id="temperature">-</span> °C<br>
+Battery: <span id="battery">-</span> V<br>
+Direction: <span id="direction">-</span><br>
+Last move speed: <span id="speed">-</span> cm/s<br>
+Distance travelled: <span id="distance">-</span> cm<br>
+</div>
 </body>
 
 </html>
